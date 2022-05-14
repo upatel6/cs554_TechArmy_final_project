@@ -88,7 +88,7 @@ app.use(cors(corsOptions));
   app.get("/static/", (request, response) => {
     handle(request, response);
   });
-  app.get("*", (request, response) => {
+  app.get("*", (request, response) => { 
     handle(request, response);
   });
 
