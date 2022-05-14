@@ -1,0 +1,4 @@
+export const pageTypes = {
+  SET_PAGE_SUCCESS: "SET_PAGE_SUCCESS",
+  SET_PAGE_ERROR: "SET_PAGE_ERROR"
+};
