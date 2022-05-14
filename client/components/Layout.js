@@ -7,6 +7,8 @@ import Signin from "../components/index/Signin";
 import { connect } from "react-redux";
 import { signup, signin } from "../redux/actions/user";
 import Router, { withRouter } from "next/router";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from '../../server/firebase/firebase-config'
 
 class Layout extends Component {
   state = {
@@ -24,6 +26,7 @@ class Layout extends Component {
     event.preventDefault();
     const { firstName, lastName, email, password } = this.state;
     const user = { firstName, lastName, email, password };
+    await createUserWithEmailAndPassword(auth, user.email, user.password);
     await this.props.signup(user);
     if (this.props.user.message !== "Error") {
       await this.props.signin(user);
@@ -39,6 +42,7 @@ class Layout extends Component {
     event.preventDefault();
     const { email, password } = this.state;
     const user = { email, password };
+    await signInWithEmailAndPassword(auth, user.email, user.password);
     await this.props.signin(user);
     if (this.props.user.message !== "Error") {
       Router.replace("/dashboard");
