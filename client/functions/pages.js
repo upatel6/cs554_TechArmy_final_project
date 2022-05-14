@@ -19,7 +19,7 @@ export const checkSession = ctx => {
       userId = ctx.req.user._id;
       return userId;
     } else {
-      if (ctx.req.url === "/") {
+      if (ctx.req.url === "/" || ctx.req.url==="/news") {
         return {};
       }
       ctx.res.writeHead(307, { Location: '/' });

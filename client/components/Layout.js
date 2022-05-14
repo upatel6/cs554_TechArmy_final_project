@@ -62,12 +62,17 @@ class Layout extends Component {
                 name: "Cryptic Ventures",
                 url: "/"
               }}
+             
               login={
                 
                 { name: "Sign In", id: "signin" }
               }
               signup={{
                  name: "Sign Up", id: "signup" }}
+              news={{
+                  title:"News",
+                  url:"/news"
+                }}
             />
             <Modal
               title="Sign Up"

@@ -22,13 +22,13 @@ class NavBar extends Component {
   };
 
   render() {
-    const { brand, cta, actions, user,login,signup } = this.props;
+    const { brand, cta, actions, user,login,signup,news } = this.props;
 
     return (
       <Fragment>
         <nav className="navbar navbar navbar-dark navbar-expand-lg">
           <Link href={brand.url}>
-            <a className="navbar-brand">{brand.name}</a>
+            <a className="navbar-brand" href={brand.url}>{brand.name}</a>
           </Link>
           <button
             className="navbar-toggler"
@@ -47,6 +47,11 @@ class NavBar extends Component {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+              <Link href={news.url}>
+                  <a className="nav-link" href={news.url}>{news.title}</a>
+              </Link>
+              </li>
             {!user.avatar && login ? (
                       <li className="nav-item">
                       <Link href="javascript:;">
