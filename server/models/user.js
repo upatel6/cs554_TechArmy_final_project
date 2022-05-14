@@ -1,48 +1,48 @@
-const { Model, schema, field } = require('firestore-schema-validator');
+// load npm packages
+const mongoose = require("mongoose");
+const mongodbErrorHandler = require("mongoose-mongodb-errors");
+const passportLocalMongoose = require("passport-local-mongoose");
 
-const UserSchema = schema({
-    firstName: field('First Name')
-      .string()
-      .trim()
-      .minLength(3)
-      .require('First Name is required'),
+// create user schema
+const userSchema = new mongoose.Schema(
+  {
+    firstName: {
+      type: String,
+      trim: true,
+      minlength: 3,
+      required: "First name is required"
+    },
+    lastName: {
+      type: String,
+      trim: true,
+      minlength: 2,
+      required: "Last name is required"
+    },
+    email: {
+      type: String,
+      trim: true,
+      unique: true,
+      lowercase: true,
+      required: "Email is required"
+    },
+    avatar: {
+      type: String,
+      default: "/static/images/pro-pic.png",
+      required: "Avatar is required"
+    },
+    bio: {
+      type: String,
+      default: "Happy new user and cryptocurrency enthusiast!",
+      required: true
+    },
+    coins: [{ type: String }]
+  },
+  { timestamps: true }
+);
 
-    lastName: field('Last Name')
-      .string()
-      .trim()
-      .minLength(2)
-      .require('Last Name is required'),
+// add plugins
+userSchema.plugin(passportLocalMongoose, { usernameField: "email" });
+userSchema.plugin(mongodbErrorHandler);
 
-    email: field('Email Address')
-      .string()
-      .email()
-      .require('Email Address is required'),
-
-    password: field('Password')
-      .string()
-      .match(/[A-Z]/, '%s must contain an uppercase letter.')
-      .match(/[a-z]/, '%s must contain a lowercase letter.')
-      .match(/[0-9]/, '%s must contain a digit.')
-      .minLength(8)
-      .require('Password is required'),
-
-    avatar: field('Avatar')
-      .string()  
-      .default('/images/pro-pic.png'), 
-
-    bio: field('Bio')
-      .string()
-      .default('Happy new user'),
-      
-    coins: field('Coins')
-      .arrayOf().string(),    
-    
-  })
-
-  
-   
-
-
-module.exports = {
-    UserSchema
-}
+// export
+module.exports = mongoose.model("User", userSchema);

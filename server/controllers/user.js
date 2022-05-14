@@ -47,13 +47,13 @@ const validateNewUser = (request, response, next) => {
 // create user
 const signupNewUser = async (request, response) => {
   const { firstName, lastName, email, password } = request.body;
-
   const allUsers = await User.find({});
   const sameEmail = allUsers.filter(user => user.email === email);
   if (sameEmail.length !== 0) {
     response.status(409).json({ message: "User already has an account!" });
   } else {
-    const newUser = await new User({ firstName, lastName, email, password });
+    const newUser = new User({ firstName, lastName, email, password });
+    console.log('new user', newUser);
     await User.register(newUser, password, (error, user) => {
       if (!user) {
         return response.status(400).json({ message: "User is undefined" });
@@ -164,7 +164,7 @@ const deleteUser = async (request, response) => {
     }
   });
   response
-    .clearCookie("krypto-connect.sid")
+    .clearCookie("crypticv_connect.sid")
     .json({ message: "User successfully deleted" });
 };
 
