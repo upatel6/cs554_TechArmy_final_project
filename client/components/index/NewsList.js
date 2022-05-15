@@ -63,7 +63,7 @@ export default function NewsList() {
               <div className="col-4" key={news.news_ID}>
                 <div className="card p-2 mb-3">
   <img className="card-img-top" src={news.related_image_big} alt={news.HEADLINE}/>
-  <div class="card-body p-2">
+  <div className="card-body p-2">
     <h5 className="card-title mt-2 ">
     <a
                   className=""
@@ -73,7 +73,7 @@ export default function NewsList() {
       {news.HEADLINE}
       </a>
     </h5>
-    <p class="card-text">{news.news_provider_name}</p>
+    <p className="card-text">{news.news_provider_name}</p>
   </div>
 </div>
                 
