@@ -123,7 +123,7 @@ class UserEditForm extends Component {
             <div className="btn-group">
               <div className="update-btn">
                 <button
-                  className="btn btn-success"
+                  className="btn btn-outline-success"
                   type="submit"
                   onClick={this.updateUser}
                 >
@@ -133,12 +133,28 @@ class UserEditForm extends Component {
             </div>
           </form>
         </div>
-        {/* <style jsx>{`
+        <style jsx>{`
           .user-edit-form {
             padding: 0.5rem;
             width: 75%;
             height: 75%;
+            background-color: #102e36ab;
+            margin: 0 auto;
           }
+
+          .user-edit-form label{
+            color: #fff;
+          }
+
+          .user-edit-form input, .user-edit-form textarea{
+            background: transparent;
+            color:#fff;
+          }
+
+          .user-edit-form input::placeholder, .user-edit-form textarea::placeholder{
+            color:#fff;
+          }
+
           .form-group-inline {
             display: flex;
             align-items: center;
@@ -147,11 +163,8 @@ class UserEditForm extends Component {
           .form-group-inline > * {
             width: 45%;
           }
-          .btn-group {
-            display: flex;
-            justify-content: space-between;
-          }
-        `}</style> */}
+
+        `}</style>
       </Fragment>
     );
   }
