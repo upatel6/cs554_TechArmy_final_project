@@ -1,5 +1,5 @@
 // SERVER HOST
-export const serverHost = "https://crypticventures.herokuapp.com/";
+export const serverHost = "https://crypticventures.herokuapp.com";
 
 // SERVER PATH
 export const apiUsers = "/api/users";
