@@ -33,11 +33,6 @@ class Signin extends Component {
             />
           </div>
         </form>
-        {/* <style jsx>{`
-          label {
-            color: #333;
-          }
-        `}</style> */}
       </div>
     );
   }

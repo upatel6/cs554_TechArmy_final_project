@@ -1,7 +1,6 @@
 import { SessionApi, UserApi } from "../api/axiosCall";
 import fuzzy from "fuzzy";
 
-// general function to get a specific user
 export const getUser = async id => {
   const data = await UserApi("get", `/${id}`);
   if (data) {
@@ -11,7 +10,6 @@ export const getUser = async id => {
   }
 };
 
-// pagination component
 export const increaseUserCoinList = async symbol => {
   const userData = localStorage.getItem("userData");
   if (userData) {
@@ -33,7 +31,7 @@ export const increaseUserCoinList = async symbol => {
   }
 };
 
-// signin component
+
 export const signinUser = async user => {
   const data = await SessionApi("post", "/signin", user);
   if (Object.keys(data).length !== 0) {
@@ -46,7 +44,7 @@ export const signinUser = async user => {
   }
 };
 
-// signup component
+
 export const signupUser = async user => {
   const data = await UserApi("post", "/signup", user);
   if (data) {
@@ -56,7 +54,7 @@ export const signupUser = async user => {
   }
 };
 
-// signout component
+
 export const signoutUser = async () => {
   const data = await SessionApi("get", "/signout");
   if (data) {
@@ -67,7 +65,7 @@ export const signoutUser = async () => {
   }
 };
 
-// search results component
+
 export const findMatches = (input, coins) => {
   if (input && coins) {
     const options = { extract: coin => coin.name };

@@ -340,7 +340,7 @@ class ResultsTable extends Component {
                         </td>
                         <td>
                           <input
-                            className="btn btn-success"
+                            className="btn btn-outline-info"
                             type="button"
                             name="add"
                             value="Add"
@@ -363,12 +363,16 @@ class ResultsTable extends Component {
             </table>
           </div>
         )}
-        { <style jsx>{`
+        <style jsx>{`
           .resultstable {
             background-color: #102e36ab;
+            text-align:center;
           }
-        
-        `}</style> }
+        .resultstable table th,.resultstable table td
+        {
+vertical-align:middle;
+        }
+        `}</style> 
       </Fragment>
     );
   }

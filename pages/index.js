@@ -35,13 +35,15 @@ class GridIndex extends Component {
             width: 100%;
             margin-bottom: 20px;
           }
-          .search .search-bar
-          {
+          
+          .search .search-bar{
             margin:0 auto;
           }
+
           .pagination{
             justify-content: end;
           }
+          
         `}</style> 
       </Fragment>
     );

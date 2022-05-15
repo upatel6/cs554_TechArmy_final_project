@@ -22,13 +22,13 @@ class NavBar extends Component {
   };
 
   render() {
-    const { brand, cta, actions, user,login,signup } = this.props;
+    const { brand, cta, actions, user,login,signup,news } = this.props;
 
     return (
       <Fragment>
         <nav className="navbar navbar navbar-dark navbar-expand-lg">
           <Link href={brand.url}>
-            <a className="navbar-brand">{brand.name}</a>
+            <a className="navbar-brand" href={brand.url}>{brand.name}</a>
           </Link>
           <button
             className="navbar-toggler"
@@ -47,6 +47,11 @@ class NavBar extends Component {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+              <Link href={news.url}>
+                  <a className="nav-link" href={news.url}>{news.title}</a>
+              </Link>
+              </li>
             {!user.avatar && login ? (
                       <li className="nav-item">
                       <Link href="javascript:;">
@@ -117,11 +122,10 @@ class NavBar extends Component {
             </ul>
           </div>
         </nav>
-        {/* <style jsx>{`
+        <style jsx>{`
           .navbar {
             width: 100%;
             height: 100%;
-            background-color: #222;
             padding: 0 3rem;
             position: relative;
           }
@@ -129,42 +133,18 @@ class NavBar extends Component {
             font-size: 2.25rem;
             position: ${user.avatar ? "absolute" : "relative"};
           }
-          .navbar-brand,
-          .fa-bars {
-            color: #eee;
-          }
-          .navbar-toggler {
-            display: none;
-          }
-          .navbar-toggler:focus {
-            outline: none;
-          }
-          @media (max-width: 992px) {
-            .navbar-expand-lg .navbar-toggler {
-              display: ${user.avatar ? "none" : "inline-block"};
-            }
-          }
-          .btn {
-            border-radius: 0;
-          }
-          .btn:hover {
-            cursor: pointer;
-            background: none;
-          }
           .navbar-img {
             display: flex;
             justify-content: flex-end;
           }
           .navbar-img img {
-            height: 40px;
-            width: 40px;
-            border-radius: 0;
+            margin-top: 2px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
             object-fit: cover;
           }
-          .dropdown-btns:hover {
-            cursor: pointer;
-          }
-        `}</style> */}
+        `}</style> 
       </Fragment>
     );
   }

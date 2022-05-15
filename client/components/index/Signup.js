@@ -62,19 +62,6 @@ class Signup extends Component {
             />
           </div>
         </form>
-        {/* <style jsx>{`
-          .form-group-inline {
-            display: flex;
-            align-items: center;
-          }
-          .form-group-inline > * {
-            width: 45%;
-            margin-right: auto;
-          }
-          label {
-            color: #333;
-          }
-        `}</style> */}
       </div>
     );
   }

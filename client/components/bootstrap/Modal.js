@@ -36,7 +36,7 @@ export class Modal extends Component {
                 <div className="modal-body">{children}</div>
                 <div className="modal-footer">
                   <input
-                    className="btn btn-primary action-btn"
+                    className="btn btn-outline-primary action-btn"
                     data-dismiss="modal"
                     name={action.name}
                     type="submit"
@@ -47,7 +47,7 @@ export class Modal extends Component {
                   />
                   <button
                     type="button"
-                    className="btn btn-secondary"
+                    className="btn btn-outline-secondary"
                     data-dismiss="modal"
                   >
                     Close
@@ -57,15 +57,6 @@ export class Modal extends Component {
             </div>
           </div>
         </div>
-        {/* <style jsx>{`
-          .modal-title {
-            color: #333;
-          }
-
-          .action-btn {
-            display: ${action ? "block" : "none"};
-          }
-        `}</style> */}
       </Fragment>
     );
   }

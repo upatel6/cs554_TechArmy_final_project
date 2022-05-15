@@ -13,26 +13,6 @@ class MyApp extends App {
             <Component {...pageProps} />
           </Provider>
         </Container>
-        {/* <style global jsx>{`
-          * {
-            margin: 0;
-            padding: 0;
-            text-decoration: 0;
-            list-style: 0;
-          }
-
-          html,
-          body,
-          #_next {
-            height: 100%;
-            width: 100%;
-          }
-          body {
-            //background-color: #444;
-            color: rgba(256, 256, 256, 0.7);
-            font-weight: 300;
-          }
-        `}</style> */}
       </Fragment>
     );
   }

@@ -54,8 +54,7 @@ export class BootPagination extends Component {
             <a className="page-link">Next</a>
           </li>
         </ul>
-        {<style jsx>{`
-          
+        <style jsx>{`
           ul > * {
             cursor: pointer;
           }
@@ -83,7 +82,7 @@ export class BootPagination extends Component {
             background-color: #0a212a;
             border-color: #ebf0f1;
           }
-        `}</style>}
+        `}</style>
       </Fragment>
     );
   }
