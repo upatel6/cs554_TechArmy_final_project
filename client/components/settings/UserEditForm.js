@@ -2,9 +2,8 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { update, destroyUser, requestUser } from "../../redux/actions/user";
 import Router, { withRouter } from "next/router";
-import {updatePassword, updateEmail} from 'firebase/auth'
+import {updatePassword, updateEmail, reauthenticateWithCredential, getAuth} from 'firebase/auth'
 import { auth } from "../../../server/firebase/firebase-config";
-
 
 class UserEditForm extends Component {
   state = {
@@ -75,7 +74,7 @@ class UserEditForm extends Component {
               <input
                 name="lastName"
                 type="text"
-                placeholder="Enter last name..."
+                placeholder="Update last name..."
                 onChange={this.handleChange}
                 value={lastName}
                 className="form-control"
