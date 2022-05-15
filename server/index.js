@@ -52,12 +52,16 @@ server.prepare().then(() => {
   app.use(passport.session());
 
 
-  const corsOptions ={
-    origin:"http://localhost:3000/", 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+//   const corsOptions ={
+//     origin: "*",
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     preflightContinue: false,
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// }
+// app.use(cors(corsOptions));
+
+app.options('*', cors())
   // setup custom middleware
   app.use((request, response, next) => {
     response.locals.user = request.user || null;

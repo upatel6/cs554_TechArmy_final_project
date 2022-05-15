@@ -36,7 +36,10 @@ export const UserApi = async (method, path, payload = {}) => {
     method,
     url: serverHost + apiUsers + path,
     withCredentials: false,
-    data: payload
+    data: payload,
+    headers:{
+      "Access-Control-Allow-Origin":"*"
+    }
   };
 
   try {
