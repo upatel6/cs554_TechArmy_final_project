@@ -40,11 +40,9 @@ export default function NewsList() {
   return (
     <Fragment>
     <div className="flex flex-col relative bg-background font-raleway items-center min-h-screen">
-      <h1 className="text-6xl text-primary font-bold mt-20">
-        Crypto News 
-      </h1>
-      <h2 className="text-active text-2xl mt-6">
-         Latest news about Crypto
+      
+      <h2 className="text-active text-white text-center text-2xl mt-6">
+         Latest Crypto News
       </h2>
       <div className="mt-12 sm:mx-auto justify-center sm:w-full sm:flex">
         <div className="mt-4 sm:mt-0 sm:ml-3">
@@ -58,36 +56,37 @@ export default function NewsList() {
           )}
         </div>
       </div>
-      <div className="mt-10 grid grid-cols-2 gap-16 max-w-5xl">
+      <div className="row">
         {response &&
           response.map((news) => {
             return (
-              <div className="mt-10 grid justify-items-center" key={news.news_ID}>
-                <img
-                  src={news.related_image_big}
-                  width="300"
-                  length="300"
-                  className="rounded-lg"
-                ></img>
-                <a
-                  className="text-primary text-center hover:text-active transition-colors duation-200"
+              <div className="col-4" key={news.news_ID}>
+                <div className="card p-2 mb-3">
+  <img className="card-img-top" src={news.related_image_big} alt={news.HEADLINE}/>
+  <div class="card-body p-2">
+    <h5 className="card-title mt-2 ">
+    <a
+                  className=""
                   key={news.news_ID}
                   href={news.news_link ? news.news_link : news.third_party_url}
                 >
-                  <h3 className="mt-10 text-2xl">{news.HEADLINE}</h3>
-                  <p className="mt-4 text-center text-lg opacity-60">
-                    {news.news_provider_name}
-                  </p>
-                </a>
+      {news.HEADLINE}
+      </a>
+    </h5>
+    <p class="card-text">{news.news_provider_name}</p>
+  </div>
+</div>
+                
               </div>
             );
           })}
       </div>
 
       {response && (
-        <div className="flex flex-col mt-10 justify-center">
+        <div className="row mb-5 mt-5">
+          <div className="col text-center">
           <button
-            className="block text-active text-base font-bold"
+            className="btn btn-outline-info"
             onClick={() => {
               setPage(page + 1);
               getNews();
@@ -95,9 +94,36 @@ export default function NewsList() {
           >
             Load next page &rarr;
           </button>
+            </div>
+         
         </div>
       )}
     </div>
+    <style jsx>
+      {
+        `
+        .card
+        {
+          background-color:#102e36ab;
+          border: 1px solid rgb(255 255 255);
+          color:#fff;
+
+        }
+        
+        .card a
+        {
+          text-decoration:none;
+          color:#fff;
+          font-size:14px
+
+        }
+        .card a:hover
+        {
+          color:#17a2b8;
+        }
+        `
+      }
+    </style>
     </Fragment>
   );
 }
