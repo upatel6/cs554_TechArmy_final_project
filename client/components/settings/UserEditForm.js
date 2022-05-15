@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { update, destroyUser, requestUser } from "../../redux/actions/user";
 import Router, { withRouter } from "next/router";
-import {updatePassword, updateEmail, reauthenticateWithCredential} from 'firebase/auth'
+import {updatePassword, updateEmail, reauthenticateWithCredential, getAuth} from 'firebase/auth'
 import { auth } from "../../../server/firebase/firebase-config";
 
 class UserEditForm extends Component {
@@ -35,9 +35,8 @@ class UserEditForm extends Component {
     }
     console.log(auth.currentUser)
     try {
-      const auth1 = getAuth();
-      await updateEmail(auth1.currentUser,user.email)
-      await updatePassword(auth1.currentUser,user.password)
+      await updateEmail(auth.currentUser,user.email)
+      await updatePassword(auth.currentUser,user.password)
     }
     catch(e) {
       alert(e)
