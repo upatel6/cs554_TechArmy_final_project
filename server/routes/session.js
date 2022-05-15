@@ -4,7 +4,7 @@ const { Router } = require("express");
 // load controllers
 const { startSession, endSession } = require("../controllers/session");
 const { deleteUser } = require("../controllers/user");
-const catchErrors = require("./catchErrors");
+const catchErrors = require("./catcherrors");
 
 // express router instance
 router = new Router();

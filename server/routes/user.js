@@ -11,7 +11,7 @@ const {
 } = require("../controllers/user");
 
 // load route error catcher
-const catchErrors = require("./catchErrors");
+const catchErrors = require("./catcherrors");
 
 // create router instance
 router = new Router();
