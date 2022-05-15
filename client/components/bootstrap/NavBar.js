@@ -146,9 +146,13 @@ class NavBar extends Component {
             border-radius: 50%;
             object-fit: cover;
           }
-          .navbar-expand-lg .navbar-nav
+          .navbar-nav
           {
-            align-item:center;
+            align-items:center;
+          }
+          .navbar-nav .dropdown-menu
+          {
+            left:-100px
           }
         `}</style> 
       </Fragment>
