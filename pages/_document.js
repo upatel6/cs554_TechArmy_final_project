@@ -5,6 +5,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+           <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" />
+           <title>
+             Cryptic Ventures
+           </title>
+
           <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

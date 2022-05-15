@@ -26,9 +26,10 @@ class NavBar extends Component {
 
     return (
       <Fragment>
-        <nav className="navbar navbar navbar-dark navbar-expand-lg">
+        <nav className="navbar navbar navbar-dark navbar-expand-lg p-3">
           <Link href={brand.url}>
-            <a className="navbar-brand" href={brand.url}>{brand.name}</a>
+            
+             <a className="navbar-brand" href={brand.url}><img src="/static/images/logo.png"/></a> 
           </Link>
           <button
             className="navbar-toggler"
@@ -128,6 +129,7 @@ class NavBar extends Component {
             height: 100%;
             padding: 0 3rem;
             position: relative;
+            background-color:#102e36ab;
           }
           .navbar-brand {
             font-size: 2.25rem;
