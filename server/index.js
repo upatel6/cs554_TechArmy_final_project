@@ -62,6 +62,14 @@ server.prepare().then(() => {
 // app.use(cors(corsOptions));
 
 app.options('*', cors())
+app.use(function (req, res, next) {
+  //Enabling CORS
+  res.header("Access-Control-Allow-Origin", "https://crypticventures.herokuapp.com/");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header( "Access-Control-Allow-Credentials", true);
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+    next();
+  });
   // setup custom middleware
   app.use((request, response, next) => {
     response.locals.user = request.user || null;
