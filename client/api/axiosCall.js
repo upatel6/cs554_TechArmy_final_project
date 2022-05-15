@@ -34,13 +34,9 @@ export const CoinCapApi = async ({ path, query, offset } = {}) => {
 export const UserApi = async (method, path, payload = {}) => {
   const Opts = {
     method,
-    url: serverHost + apiUsers + path,
+    url:proxyEndpoint + serverHost + apiUsers + path,
     withCredentials: false,
-    data: payload,
-    headers:{
-      "Access-Control-Allow-Origin":"*"
-    }
-  };
+    data: payload,  };
 
   try {
     const { data } = await axios(Opts);
