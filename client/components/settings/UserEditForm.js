@@ -2,9 +2,8 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { update, destroyUser, requestUser } from "../../redux/actions/user";
 import Router, { withRouter } from "next/router";
-import {updatePassword, updateEmail} from 'firebase/auth'
+import {updatePassword, updateEmail, reauthenticateWithCredential} from 'firebase/auth'
 import { auth } from "../../../server/firebase/firebase-config";
-
 
 class UserEditForm extends Component {
   state = {
@@ -36,8 +35,9 @@ class UserEditForm extends Component {
     }
     console.log(auth.currentUser)
     try {
-      await updateEmail(auth.currentUser,user.email)
-      await updatePassword(auth.currentUser,user.password)
+      const auth1 = getAuth();
+      await updateEmail(auth1.currentUser,user.email)
+      await updatePassword(auth1.currentUser,user.password)
     }
     catch(e) {
       alert(e)
@@ -75,7 +75,7 @@ class UserEditForm extends Component {
               <input
                 name="lastName"
                 type="text"
-                placeholder="Enter last name..."
+                placeholder="Update last name..."
                 onChange={this.handleChange}
                 value={lastName}
                 className="form-control"
