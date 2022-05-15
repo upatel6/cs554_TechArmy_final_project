@@ -9,6 +9,7 @@ import { signup, signin } from "../redux/actions/user";
 import Router, { withRouter } from "next/router";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../../server/firebase/firebase-config'
+import { use } from "passport";
 
 class Layout extends Component {
   state = {
@@ -23,18 +24,38 @@ class Layout extends Component {
   };
 
   handleSignup = async event => {
+
     event.preventDefault();
     const { firstName, lastName, email, password } = this.state;
     const user = { firstName, lastName, email, password };
-    await createUserWithEmailAndPassword(auth, user.email, user.password);
+    try {
+      if(typeof user.firstName !== "string" || typeof user.lastName !== "string" || typeof user.email !== "string" || typeof user.password !== "string") throw "Invalid input type provided";
+      if(user.firstName.length === 0) throw "Please Enter Your First Name";
+      if(user.lastName.length === 0) throw "Please Enter Your Last Name";
+      if(user.email.length === 0) throw "Please Enter Your Email Address";
+      if(user.password.length === 0) throw "Please Enter Your Password";
+      if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email))) throw "Email address should be like abc@gmail.com";
+      if(user.password.length < 6 || user.password.length > 16) throw "Password length should be between 6 and 16";
+      if(!(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(user.password))) throw "Password should contain atleast one number and special character";
+    }
+    catch(e) {
+      alert(e)
+      return;
+    }
+    try {
+      await createUserWithEmailAndPassword(auth, user.email, user.password);
+    }
+    catch(e) {
+      alert("Already a user");
+      return
+    }
     await this.props.signup(user);
+    alert("SignUp Successfull");
     if (this.props.user.message !== "Error") {
       await this.props.signin(user);
       if (this.props.user.message !== "Error") {
         Router.replace("/dashboard");
       }
-    } else {
-      alert(this.props.user.message);
     }
   };
 
@@ -42,8 +63,25 @@ class Layout extends Component {
     event.preventDefault();
     const { email, password } = this.state;
     const user = { email, password };
-    await signInWithEmailAndPassword(auth, user.email, user.password);
+
+    try {
+      if(user.email.length === 0) throw "Please Enter Your Email Address";
+      if(user.password.length === 0) throw "Please Enter Your Password";
+      if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email))) throw "Email address should be like abc@gmail.com";
+    }
+    catch(e) {
+      alert(e)
+      return
+    }
+    try {
+      await signInWithEmailAndPassword(auth, user.email, user.password);
+    }
+    catch(e) {
+      alert("Invalid Credentials")
+      return
+    }
     await this.props.signin(user);
+    alert("Login Successfull")
     if (this.props.user.message !== "Error") {
       Router.replace("/dashboard");
     } else {

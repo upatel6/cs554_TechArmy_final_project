@@ -2,18 +2,19 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { update, destroyUser, requestUser } from "../../redux/actions/user";
 import Router, { withRouter } from "next/router";
+import {updatePassword, updateEmail} from 'firebase/auth'
+import { auth } from "../../../server/firebase/firebase-config";
+
 
 class UserEditForm extends Component {
   state = {
-    name: "",
-    email: "",
-    bio: ""
+    firstName:"", lastName:"", email:"", password:"", bio:""
   };
 
   async componentDidMount() {
     await this.props.requestUser(this.props.session);
-    const { name, email, bio } = this.props.user;
-    this.setState({ name, email, bio });
+    const { firstName, lastName, email, password, bio } = this.props.user;
+    this.setState({ firstName, lastName, email, password, bio });
   }
 
   handleChange = event => {
@@ -22,26 +23,35 @@ class UserEditForm extends Component {
 
   updateUser = async event => {
     event.preventDefault();
-    const { name, email, bio } = this.state;
-    const user = { firstName: name, email, bio };
+    const { firstName, lastName, email, password, bio } = this.state;
+    const user = { firstName, lastName, email, password, bio };
+    try {
+      if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email))) throw "Email address should be like abc@gmail.com";
+      if(user.password.length < 6 || user.password.length > 16) throw "Password length should be between 6 and 16";
+      if(!(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(user.password))) throw "Password should contain atleast one number and special character";
+    }
+    catch(e) {
+      alert(e)
+      return;
+    }
+    console.log(auth.currentUser)
+    try {
+      await updateEmail(auth.currentUser,user.email)
+      await updatePassword(auth.currentUser,user.password)
+    }
+    catch(e) {
+      alert(e)
+      return
+    }
     await this.props.update(user);
+    alert("Successfully Updated")
     if (this.props.user.message !== "Error") {
       Router.replace("/dashboard");
     }
   };
 
-  deleteUser = async () => {
-    event.preventDefault();
-    const destroy = confirm("Are you sure?");
-    if (destroy) {
-      await this.props.destroyUser(this.props.session);
-    } else {
-      alert("Woah! That was a close one!");
-    }
-  };
-
   render() {
-    const { name, email, bio } = this.state;
+    const { firstName, lastName, email, password, bio } = this.state;
 
     return (
       <Fragment>
@@ -54,12 +64,26 @@ class UserEditForm extends Component {
                   name="name"
                   type="text"
                   placeholder="Update first name..."
-                  value={name}
+                  value={firstName}
                   onChange={this.handleChange}
                   className="form-control"
                   autoComplete="off"
                 />
               </div>
+              <div className="form-group">
+              <label>Last Name</label>
+              <input
+                name="lastName"
+                type="text"
+                placeholder="Enter last name..."
+                onChange={this.handleChange}
+                value={lastName}
+                className="form-control"
+                autoComplete="off"
+                required
+              />
+              </div>
+          </div>
               <div className="form-group">
                 <label>Email</label>
                 <input
@@ -72,7 +96,19 @@ class UserEditForm extends Component {
                   autoComplete="off"
                 />
               </div>
-            </div>
+              <div className="form-group">
+            <label>Password</label>
+            <input
+              name="password"
+              type="password"
+              placeholder="Update password..."
+              onChange={this.handleChange}
+              value={password}
+              className="form-control"
+              autoComplete="off"
+              required
+            />
+          </div>
             <div className="form-group">
               <label>Biography</label>
               <textarea
@@ -85,15 +121,6 @@ class UserEditForm extends Component {
               />
             </div>
             <div className="btn-group">
-              <div className="delete-btn">
-                <button
-                  className="btn btn-danger"
-                  type="button"
-                  onClick={this.deleteUser}
-                >
-                  Delete
-                </button>
-              </div>
               <div className="update-btn">
                 <button
                   className="btn btn-success"

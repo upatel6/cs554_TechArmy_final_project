@@ -13,6 +13,7 @@ class Signout extends Component {
     event.preventDefault();
     await signOut(auth);
     await this.props.signout();
+    alert("SignOut Successfull")
     if (this.props.user.message != "Error") {
       this.setState({ message: this.props.user.message });
       setTimeout(() => {

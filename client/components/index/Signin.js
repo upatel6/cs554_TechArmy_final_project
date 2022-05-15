@@ -16,6 +16,7 @@ class Signin extends Component {
               value={email}
               className="form-control"
               autoComplete="off"
+              required
             />
           </div>
           <div className="form-group">
@@ -28,6 +29,7 @@ class Signin extends Component {
               value={password}
               className="form-control"
               autoComplete="off"
+              required
             />
           </div>
         </form>

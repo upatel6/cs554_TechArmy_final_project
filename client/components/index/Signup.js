@@ -18,6 +18,7 @@ class Signup extends Component {
                 value={firstName}
                 className="form-control"
                 autoComplete="off"
+                required
               />
             </div>
             <div className="form-group">
@@ -30,6 +31,7 @@ class Signup extends Component {
                 value={lastName}
                 className="form-control"
                 autoComplete="off"
+                required
               />
             </div>
           </div>
@@ -43,6 +45,7 @@ class Signup extends Component {
               value={email}
               className="form-control"
               autoComplete="off"
+              required
             />
           </div>
           <div className="form-group">
@@ -55,6 +58,7 @@ class Signup extends Component {
               value={password}
               className="form-control"
               autoComplete="off"
+              required
             />
           </div>
         </form>
