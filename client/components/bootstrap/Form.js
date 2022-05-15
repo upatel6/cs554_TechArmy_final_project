@@ -42,12 +42,6 @@ export class Form extends Component {
             </button>
           </form>
         </div>
-        {/* <style jsx>{`
-          .card {
-            border-radius: 0;
-            padding: 1rem;
-          }
-        `}</style> */}
       </Fragment>
     );
   }

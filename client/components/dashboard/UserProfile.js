@@ -9,21 +9,13 @@ class UserProfile extends Component {
     return (
       <div className="user-avatar">
         <img src={avatar} alt={`${name}.png`} />
-        {/* <style jsx>{`
-          .user-avatar {
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        <style jsx>{`
+          
+          .user-avatar img {
+            width: 80%;
+            border-radius: 50%;
           }
-          img {
-            height: 100%;
-            width: 100%;
-            object-fit: fill;
-          }
-        `}</style> */}
+        `}</style> 
       </div>
     );
   }

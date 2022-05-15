@@ -29,7 +29,8 @@ class CoinList extends Component {
         {coinsLoading ? (
           <div>Loading</div>
         ) : (
-          <table className="table table-bordered">
+          <div className="cointable">
+          <table className="table table-bordered color-white">
             <thead className="dark-head">
               <tr>
                 <th scope="col">Item</th>
@@ -54,7 +55,7 @@ class CoinList extends Component {
                         <td className="remove">
                           <button
                             type="button"
-                            className="btn btn-danger"
+                            className="btn btn-outline-danger"
                             onClick={() =>
                               this.props.deleteUserCoin(
                                 coin.symbol.toUpperCase()
@@ -74,45 +75,19 @@ class CoinList extends Component {
             )}
             <tfoot />
           </table>
+          </div>
         )}
+                <style jsx>{`
+          .cointable {
+            background-color: #102e36ab;
+            text-align:center;
+          }
+        .cointable table th,.cointable table td
+        {
+vertical-align:middle;
+        }
         
-        {/* <style jsx>{`
-          table {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-          }
-          .dark-head {
-            background-color: #111;
-          }
-          tr {
-            border-bottom: 0.75px solid #eee;
-          }
-          tr:last-child {
-            border-bottom: none;
-          }
-          th {
-            padding: 0 0.75rem;
-          }
-          td {
-            padding: 0.75rem;
-          }
-          .user-coin {
-            width: 70%;
-          }
-          .item {
-            text-align: center;
-          }
-          .remove {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .btn-danger {
-            border-radius: 0;
-          }
-        `}</style> */}
-
+        `}</style> 
       </Fragment>
     );
   }

@@ -22,11 +22,6 @@ export class Social extends Component {
         <a href="#">
           <i className="fab fa-pinterest"> </i>
         </a>
-        {/* <style jsx>{`
-          .fab {
-            color: #fff;
-          }
-        `}</style> */}
       </Fragment>
     );
   }

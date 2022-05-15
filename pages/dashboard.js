@@ -23,9 +23,6 @@ class GridDashboard extends Component {
       <Fragment>
         <Layout>
           <div className="dashboard">
-            {/* <div className="wallet-item-1">Wallet Item 1</div>
-            <div className="wallet-item-2">Wallet Item 2</div>
-            <div className="wallet-item-3">Wallet Item 3</div> */}
             <div className="avatar">
               <UserProfile session={this.props.session} />
             </div>
@@ -40,7 +37,7 @@ class GridDashboard extends Component {
             </div>
           </div>
         </Layout>
-        {/* <style jsx>{`
+        <style jsx>{`
           .dashboard {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -48,31 +45,18 @@ class GridDashboard extends Component {
             grid-gap: 1rem;
           }
 
-          .dashboard > * {
-            background-color: #222;
-          }
-
-           {
-            .wallet-item-1 {
-            grid-column: 1 / span 2;
-            grid-row: 1 / 2;
-          }
-
-          .wallet-item-2 {
-            grid-column: 3 / span 2;
-            grid-row: 1 / 2;
-          }
-
-          .wallet-item-3 {
-            grid-column: 5 / span 2;
-            grid-row: 1 / 2;
-          } 
-          }
+          // .dashboard > * {
+          //   background-color: #222;
+          // }
 
           .avatar {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
             position: relative;
+            text-align:center;
+            display:flex;
+            align-items: center;
+
           }
 
           .bio {
@@ -108,8 +92,9 @@ class GridDashboard extends Component {
             display: grid;
             position: relative;
           }
-        `}</style> */}
+        `}</style>
       </Fragment>
+      
     );
   }
 }

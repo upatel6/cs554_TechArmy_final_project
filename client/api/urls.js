@@ -11,6 +11,8 @@ export const proxyEndpoint = "https://cors-anywhere.herokuapp.com/";
 // API HOSTS
 export const coincapHost = "https://sandbox-api.coinmarketcap.com";
 
+//https://sandbox-api.coinmarketcap.com
+
 // API PATHS
 export const coincapLatestPath = "/v1/cryptocurrency/listings/latest";
 

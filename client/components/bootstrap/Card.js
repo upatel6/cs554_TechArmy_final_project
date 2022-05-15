@@ -21,33 +21,7 @@ export class Card extends Component {
             </Link>
           </div>
         </div>
-        {/* <style jsx>{`
-          .card {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            border-radius: 0;
-            padding: 0;
-            color: #222;
-            font-size: 0.65rem;
-          }
-          .card > * {
-            padding: 0.35rem;
-          }
-          .card-img-top {
-            display: ${src ? "block" : "none"};
-          }
-          .card-text {
-            font-size: ${lg ? "1.5rem" : "0.8rem"};
-          }
-          .card-link {
-            display: ${url ? "block" : "none"};
-          }
-          .card-title {
-            display: ${title ? "block" : "none"};
-            font-size: 0.85rem;
-          }
-        `}</style> */}
+       
       </Fragment>
     );
   }

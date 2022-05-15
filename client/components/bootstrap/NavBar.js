@@ -122,11 +122,10 @@ class NavBar extends Component {
             </ul>
           </div>
         </nav>
-        {/* <style jsx>{`
+        <style jsx>{`
           .navbar {
             width: 100%;
             height: 100%;
-            background-color: #222;
             padding: 0 3rem;
             position: relative;
           }
@@ -134,42 +133,18 @@ class NavBar extends Component {
             font-size: 2.25rem;
             position: ${user.avatar ? "absolute" : "relative"};
           }
-          .navbar-brand,
-          .fa-bars {
-            color: #eee;
-          }
-          .navbar-toggler {
-            display: none;
-          }
-          .navbar-toggler:focus {
-            outline: none;
-          }
-          @media (max-width: 992px) {
-            .navbar-expand-lg .navbar-toggler {
-              display: ${user.avatar ? "none" : "inline-block"};
-            }
-          }
-          .btn {
-            border-radius: 0;
-          }
-          .btn:hover {
-            cursor: pointer;
-            background: none;
-          }
           .navbar-img {
             display: flex;
             justify-content: flex-end;
           }
           .navbar-img img {
-            height: 40px;
-            width: 40px;
-            border-radius: 0;
+            margin-top: 2px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
             object-fit: cover;
           }
-          .dropdown-btns:hover {
-            cursor: pointer;
-          }
-        `}</style> */}
+        `}</style> 
       </Fragment>
     );
   }

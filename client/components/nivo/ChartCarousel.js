@@ -64,12 +64,21 @@ export class ChartCarousel extends Component {
             <span className="carousel-control-next-icon" aria-hidden="true" />
           </a>
         </div>
-        {/* <style jsx>{`
-          .carousel {
-            width: 100%;
-            position: absolute;
+        <style jsx>{`
+
+          .carousel-control-prev {
+            left: -100px;
           }
-        `}</style> */}
+
+          .carousel-control-next {
+            right: -100px;
+          }      
+          
+          .carousel-inner {
+            background-color: #fff;
+          }
+          
+        `}</style> 
       </Fragment>
     );
   }

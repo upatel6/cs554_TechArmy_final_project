@@ -28,19 +28,6 @@ export class ListGroup extends Component {
             </ul>
           </div>
         </div>
-        {/* <style jsx>{`
-          .nav-tabs {
-            margin-bottom: -1px;
-            width: 100%;
-          }
-          .nav-link {
-            border-radius: 0;
-          }
-          .card {
-            width: 100%;
-            border-radius: 0;
-          }
-        `}</style> */}
       </Fragment>
     );
   }

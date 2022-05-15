@@ -19,11 +19,6 @@ export class Button extends Component {
         >
           {value}
         </button>
-        {/* <style jsx>{`
-          button {
-            border-radius: 0;
-          }
-        `}</style> */}
       </div>
     );
   }

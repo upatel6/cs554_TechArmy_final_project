@@ -57,6 +57,8 @@ class HistoricalChart extends Component {
         <ResponsiveLine
           data={Object.values(this.state.data)}
           margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+          colors={{scheme:'nivo'}}
+          BorderColor={{ theme : 'backgrounds'}}
           xScale={{ type: "point" }}
           yScale={{ type: "linear", stacked: true, min: "auto", max: "auto" }}
           axisTop={{
@@ -81,25 +83,29 @@ class HistoricalChart extends Component {
           axisLeft={{
             orient: "left",
             tickSize: 5,
-            tickPadding: 5,
+            tickPadding: 0,
             tickRotation: 0,
             legend: "Price",
-            legendOffset: -40,
-            legendPosition: "middle"
+            legendOffset: -45,
+            legendPosition: "middle",
+            
           }}
         />
-        {/* <style jsx>{`
+        <style jsx>{`
           .my-chart {
             height: 20rem;
             width: 100%;
-            background: white;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
+            positon: 
+            background-color: #fff;
+          }
+          text
+          {
+            color:rgb(255,255,255) !important;
           }
           .my-chart:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
           }
-        `}</style> */}
+        `}</style>
       </div>
     ) : (
       <div />

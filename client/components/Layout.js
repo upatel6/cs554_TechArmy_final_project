@@ -110,44 +110,20 @@ class Layout extends Component {
             </div>
           </div>
         </div>
-        <style global jsx>
-          
-          {
-          `
+        <style global jsx>{`
           .bg-image
           {
             background-image:url("static/images/WallpaperDog-20525427.jpg")
+          }
+
+          .container{
+            min-height: 100vh;
           }
 
           .color-white
           {
             color:#fff;
           }
-      
-          // .layout {
-
-          //   display: grid;
-          //   grid-template-rows: 6rem minmax(30rem, auto) 20rem;
-          //   grid-gap: 0.75rem;
-          // }
-
-          // .header {
-          //   display: flex;
-          // }
-
-          // img {
-          //   height: 100%;
-          //   width: 100%;
-          //   object-fit: fill;
-          // }
-
-          // .primary {
-          //   display: flex;
-          //   align-items: center;
-          //   justify-content: center;
-          //   background-color: #222;
-          // }
-          //}
         `}</style>
       </Fragment>
     );
