@@ -9,7 +9,7 @@ export const apiSession = "/api/session";
 export const proxyEndpoint = "https://cors-anywhere.herokuapp.com/";
 
 // API HOSTS
-export const coincapHost = "https://sandbox-api.coinmarketcap.com";
+export const coincapHost = "https://pro-api.coinmarketcap.com";
 
 //https://sandbox-api.coinmarketcap.com
 
