@@ -1,6 +1,6 @@
 # Cryptic Ventures
 
-[Cryptic Ventures](https://crypticventures.herokuapp.com/) is a cryptocurrency tracking tool that allows authenticated users to track cryptocurrency, monitor changes and trends, and get the latest cryptocurrency news relevant to coins of interest on the market.
+[Cryptic Ventures](https://crypticventures.herokuapp.com/) is a cryptocurrency tracking application that allows authenticated users to track cryptocurrency, monitor changes and trends, and get the latest cryptocurrency news relevant to coins of interest on the market.
 
 ## Table of Contents
 
@@ -9,6 +9,7 @@
 3. [Installation](#installation)
 4. [Features](#features)
 5. [Author](#author)
+6. [Note](#Note)
 
 ## Getting Started
 
@@ -16,8 +17,8 @@ Initial conditions to get the most out of the code provided.
 
 - Package Manager - [NPM](https://nodejs.org/en/)
 - Code Editor - [VS Code](https://code.visualstudio.com/)
-- Operating System - MAC OS, Windows or any Linux Distro
-- Modern Browser - [Google Chrome](https://www.google.com/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- Operating System - MAC OS, Windows.
+- Modern Browser - [Google Chrome](https://www.google.com/chrome/)
 
 ## Technology
 
@@ -43,7 +44,7 @@ Initial conditions to get the most out of the code provided.
 
 - **_Passport_**: Passport is Express-compatible authentication middleware for Node.js <br>
 
-- **_FuzzySearch_**:I helps in searching likely relevant to a search argument even when the argument does not exactly correspond to the desired information.<br>
+- **_FuzzySearch_**:It helps in searching likely relevant to a search argument even when the argument does not exactly correspond to the desired information.<br>
 
 
 View the [package.json](https://github.com/upatel6/cs554_TechArmy_final_project/blob/main/package.json) to see additional technology used.
@@ -91,3 +92,8 @@ npm run dev
  - **Udit Patel 20006998**
  - **Shefalee Shet 10475272**
  - **Bhargav Baleja 10469548**
+
+## Note
+
+- While running the project on localhost go to  [Remote Access](https://cors-anywhere.herokuapp.com/) to get demo access of the application to run remotely
+- If one in logged in for a longer session. SignOut and SignIn again to make updates in User profile.
