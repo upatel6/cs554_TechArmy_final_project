@@ -55,7 +55,7 @@ class NavBar extends Component {
               </li>
             {!user.avatar && login ? (
                       <li className="nav-item">
-                      <Link href="javascript:;">
+                      <Link href="/">
                           <a
                           key={login.name}
                           className="nav-link"
@@ -73,7 +73,7 @@ class NavBar extends Component {
                 
                 {!user.avatar && signup ? (
                   <li className="nav-item">
-                  <Link href="javascript:;">
+                  <Link href="/">
                       <a
                       key={signup.name}
                       className="nav-link"

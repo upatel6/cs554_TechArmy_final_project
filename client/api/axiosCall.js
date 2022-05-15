@@ -34,10 +34,6 @@ export const CoinCapApi = async ({ path, query, offset } = {}) => {
 export const UserApi = async (method, path, payload = {}) => {
   const Opts = {
     method,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json',
-    },
     url: serverHost + apiUsers + path,
     withCredentials: false,
     data: payload,  };
