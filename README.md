@@ -1,34 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cryptic Ventures
+
+[Cryptic Ventures](https://crypticventures.herokuapp.com/) is a cryptocurrency tracking tool that allows authenticated users to track cryptocurrency, monitor changes and trends, and get the latest cryptocurrency news relevant to coins of interest on the market.
+
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Technology](#technology)
+3. [Installation](#installation)
+4. [Features](#features)
+5. [Author](#author)
 
 ## Getting Started
 
-First, run the development server:
+Initial conditions to get the most out of the code provided.
+
+- Package Manager - [NPM](https://nodejs.org/en/)
+- Code Editor - [VS Code](https://code.visualstudio.com/)
+- Operating System - MAC OS, Windows or any Linux Distro
+- Modern Browser - [Google Chrome](https://www.google.com/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+
+## Technology
+### Course Technology
+
+**_React_**: React will help in the front-end part by providing many libraries for user interface and components. It will be helpful in a way for creating reusable UI components that will be included in our pages <br>
+**_Redux_**: Redux is mainly used for state management.This means it will help in data communication facilitation across different components. We will use redux for making our application simple to use and easier to maintain <br>
+**_Next_**: Next.js will be used for rendering server-side react. It will help us in unifying react and express. This will help us in pre-rendering every page which will result in better performance <br>
+**_FirebaseAuthentication_**: Firebase authentication will be used to authorize users for our website. It will include login/signup by email id. Firebase authentication is a framework to build secure authentication systems whilst improving the sign-in experience. We will use Firebase to authenticate users to our application and to allow multi-platform sign in. <br>
+
+### Independent Technology
+
+**_Nivo_**: Charting framework built on D3 used to render charts from server-side. It helps in data visualization and also enables us to bring data to life using HTML, CSS and SVG. We will use nivo for building charts and graphs related to crypto coins <br>
+**_HerokuAppDeployment_**: Heroku is a container-based cloud Platform as a Service (PaaS).Developers use Heroku to deploy, manage, and scale modern apps.Heroku platform is elegant, flexible, and easy to use, offering developers the simplest path to getting their apps to market <br>
+
+### Extra Technology
+
+**_MongoDB_**: NoSQL database used to store user, coin and session data <br>
+**_Passport_**: Passport is Express-compatible authentication middleware for Node.js <br>
+**_FuzzySearch_**:I helps in searching likely relevant to a search argument even when the argument does not exactly correspond to the desired information.<br>
+
+
+View the [package.json](https://github.com/upatel6/cs554_TechArmy_final_project/blob/main/package.json) to see additional technology used.
+
+## Installation
+
+- Install
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm i --save
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Run Server 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+npm run server
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Run Client 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm run dev 
+```
 
-## Learn More
+- Go to [CoinMarketCap](https://coinmarketcap.com/api/) API main site and register for an API Key
+- Go to [CryptoCompare](https://min-api.cryptocompare.com/) API main site and register for an API Key
+- Go to [InvestingCryptocurrencyMarkets](https://rapidapi.com/apidojo/api/investing-cryptocurrency-markets) API main site and register for an API Key
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Firebase Authentication
+- Sessions
+- Cryptocurrency Market Data
+- Cryptocurrency Latest News
+- Specific Coin Monitoring
+- Dashboard
+- Coin Historical Data Visualization
+- Fuzzy searching
+- Heroku App Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Author
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Tech Army Members:**
+ - **Shweta Mishra 10476307**
+ - **Udit Patel 20006998**
+ - **Shefalee Shet 10475272**
+ - **Bhargav Baleja 10469548**
