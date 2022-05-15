@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Cryptic Ventures
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Cryptic Ventures](https://crypticventures.herokuapp.com/) is a cryptocurrency tracking application that allows authenticated users to track cryptocurrency, monitor changes and trends, and get the latest cryptocurrency news relevant to coins of interest on the market.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Getting Started](#getting-started)
+2. [Technology](#technology)
+3. [Installation](#installation)
+4. [Features](#features)
+5. [Author](#author)
+6. [Note](#Note)
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Initial conditions to get the most out of the code provided.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Package Manager - [NPM](https://nodejs.org/en/)
+- Code Editor - [VS Code](https://code.visualstudio.com/)
+- Operating System - MAC OS, Windows.
+- Modern Browser - [Google Chrome](https://www.google.com/chrome/)
 
-### `npm test`
+## Technology
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Course Technology
 
-### `npm run build`
+- **_React_**: React will help in the front-end part by providing many libraries for user interface and components. It will be helpful in a way for creating reusable UI components that will be included in our pages <br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **_Redux_**: Redux is mainly used for state management.This means it will help in data communication facilitation across different components. We will use redux for making our application simple to use and easier to maintain <br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **_Next_**: Next.js will be used for rendering server-side react. It will help us in unifying react and express. This will help us in pre-rendering every page which will result in better performance <br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **_FirebaseAuthentication_**: Firebase authentication will be used to authorize users for our website. It will include login/signup by email id. Firebase authentication is a framework to build secure authentication systems whilst improving the sign-in experience. We will use Firebase to authenticate users to our application and to allow multi-platform sign in. <br>
 
-### `npm run eject`
+### Independent Technology
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **_Nivo_**: Charting framework built on D3 used to render charts from server-side. It helps in data visualization and also enables us to bring data to life using HTML, CSS and SVG. We will use nivo for building charts and graphs related to crypto coins <br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **_HerokuAppDeployment_**: Heroku is a container-based cloud Platform as a Service (PaaS).Developers use Heroku to deploy, manage, and scale modern apps.Heroku platform is elegant, flexible, and easy to use, offering developers the simplest path to getting their apps to market <br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Extra Technology
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **_MongoDB_**: NoSQL database used to store user, coin and session data <br>
 
-## Learn More
+- **_Passport_**: Passport is Express-compatible authentication middleware for Node.js <br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **_FuzzySearch_**:It helps in searching likely relevant to a search argument even when the argument does not exactly correspond to the desired information.<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+View the [package.json](https://github.com/upatel6/cs554_TechArmy_final_project/blob/main/package.json) to see additional technology used.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## SetUp
 
-### Analyzing the Bundle Size
+- Install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm i --save
+```
 
-### Making a Progressive Web App
+- Run Server 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run server
+```
 
-### Advanced Configuration
+- Run Client 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm run dev 
+```
 
-### Deployment
+- Go to [CoinMarketCap](https://coinmarketcap.com/api/) API main site and register for an API Key
+- Go to [CryptoCompare](https://min-api.cryptocompare.com/) API main site and register for an API Key
+- Go to [InvestingCryptocurrencyMarkets](https://rapidapi.com/apidojo/api/investing-cryptocurrency-markets) API main site and register for an API Key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Features
 
-### `npm run build` fails to minify
+- Firebase Authentication
+- Sessions
+- Cryptocurrency Market Data
+- Cryptocurrency Latest News
+- Specific Coin Monitoring
+- Dashboard
+- Coin Historical Data Visualization
+- Fuzzy searching
+- Heroku App Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+
+**Tech Army Members:**
+ - **Shweta Mishra 10476307**
+ - **Udit Patel 20006998**
+ - **Shefalee Shet 10475272**
+ - **Bhargav Baleja 10469548**
+
+## Note
+
+- While running the project on localhost go to  [Remote Access](https://cors-anywhere.herokuapp.com/) to get demo access of the application to run remotely
+- If one in logged in for a longer session. SignOut and SignIn again to make updates in User profile.

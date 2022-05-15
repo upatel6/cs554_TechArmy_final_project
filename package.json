@@ -1,64 +1,59 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "cryptic_ventures",
+  "version": "1.0.0",
+  "description": "cryptocurrency tracking application",
+  "main": "server/index.js",
+  "engines": {
+    "node": "10.15.3"
+  },
+  "proxy": "https://crypticventures.herokuapp.com/",
+  "scripts": {
+    "server": "nodemon server/index.js",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p $PORT"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@nivo/line": "^0.58.0",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
     "apexcharts": "^3.6.12",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "compression": "^1.7.4",
+    "connect-mongo": "^2.0.3",
+    "cors": "^2.8.5",
     "date-fns": "^1.30.1",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "express-session": "^1.16.1",
     "express-validator": "^5.3.1",
-    "firebase": "^9.8.0",
+    "firebase": "^9.8.1",
     "fuzzy": "^0.1.3",
     "helmet": "^3.18.0",
+    "jquery": "^3.6.0",
+    "jquery-validation": "^1.19.3",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
+    "mongoose": "^5.5.5",
+    "mongoose-mongodb-errors": "0.0.2",
     "morgan": "^1.9.1",
     "multer": "^1.4.1",
     "next": "^8.1.0",
     "passport": "^0.4.0",
     "passport-local-mongoose": "^5.0.1",
     "popper.js": "^1.14.7",
-    "react": "^17.0.2",
+    "react": "^16.8.6",
     "react-apexcharts": "^1.3.3",
-    "react-dom": "^17.0.2",
+    "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
-    "react-scripts": "5.0.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0",
-    "web-vitals": "^2.1.4"
+    "redux-thunk": "^2.3.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
