@@ -31,13 +31,15 @@ class HistoricalChart extends Component {
     for (let i = 9; i >= 0; i--) {
       ts = moment().unix() - i * WEEK;
       response = await axios.get(
-        `https://min-api.cryptocompare.com/data/pricehistorical?fsym=BTC&tsyms=USD&ts=${ts}&api_key=${CRYPTO_KEY}`,
+        `https://min-api.cryptocompare.com/data/pricehistorical?fsym=${
+          this.props.symbol
+        }&tsyms=USD&ts=${ts}&api_key=${CRYPTO_KEY}`,
         { withCredentials: false }
       );
 
       historical[9 - i] = {
         x: `${moment.unix(ts).format("MM/DD/YYYY")}`,
-        y: response.data["BTC"].USD
+        y: response.data[this.props.symbol].USD
       };
 
       data = { ...this.state.data };
