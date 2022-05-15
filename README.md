@@ -97,3 +97,4 @@ npm run dev
 
 - While running the project on localhost go to  [Remote Access](https://cors-anywhere.herokuapp.com/) to get demo access of the application to run remotely
 - If one in logged in for a longer session. SignOut and SignIn again to make updates in User profile.
+- For sucessfully running the application on [Cryptic Ventures herokuapp](https://crypticventures.herokuapp.com/) one need to clone the project and run the command npm run server and then click on the link.
